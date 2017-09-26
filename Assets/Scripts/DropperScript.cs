@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.UI;	//Let's us talk to UI text
+
 public class DropperScript : MonoBehaviour {
 
 	bool drop = false;	//The variable that determines whether or not the ball should be dropped
@@ -23,7 +25,7 @@ public class DropperScript : MonoBehaviour {
 		//Moves the dropper once space has been pressed
 		if (drop == true) {
 			this.transform.Translate (Vector3.left * Time.deltaTime * 50);
-			UIText.SetActive (false);	//Turns off the UI test
-		}
+			UIText.GetComponent<Text> ().text = " ";
 	}
+}
 }
